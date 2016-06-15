@@ -1,53 +1,11 @@
-# site.pp must exist (puppet #15106, foreman #1708)
-#node fai-server {
-#}
+# site.pp for Semtix
+# defines two types of nodes: our clients and our server
 
-node fai-client {
-
-package { 'pairs':
-	ensure => installed,
+node 'cece.semtix', 'hannah.semtix', 'clara.semtix', 'lucy.semtix', 'helene.semtix' {
+	include semtix::client
 }
 
-}
+node gretel.semtix {
 
-node fai-server {
-	# Configure puppetdb and its underlying database
-#	class { 'puppetdb': 
-#		database => 'embedded',
-#		database_embedded_path => '/var/lib/puppetdb/',
-#	#	disable_ssl => 'true',
-#		ssl_listen_address => '0.0.0.0',
-#		}
-	
-	# Configure the Puppet master to use puppetdb
-	class { 'puppetdb::master::config': 
-		puppetdb_server => 'fai-server.lan',
-  		puppetdb_port   => 8081,
-		}
-
-	class { 'puppetboard':
-	  manage_git        => true,
-	  manage_virtualenv => true,
-		}
-
-	class { 'apache': 
-		mpm_module => 'prefork',
-		purge_configs => 'false',
-		}
-
-	class { 'apache::mod::wsgi': }
-	class { 'apache::mod::headers': }
-	class { 'apache::mod::rewrite': }
-	class { 'apache::mod::php': }
-	class { 'apache::mod::proxy': 
-		allow_from => '0.0.0.0',
-		proxy_requests => 'On'
-		}
-	# Configure Puppetboard
-	# Access Puppetboard through pboard.example.com
-	class { 'puppetboard::apache::vhost':
-		 vhost_name => 'puppetboard.fai-server.lan',
-		 port       => 80,
-		}
-
+	include semtix::server
 }
