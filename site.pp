@@ -4,11 +4,13 @@
 node 'cece.semtix', 'lucy.semtix', 'helene.semtix' {
 	include semtix::client
 	include printer::judith
+	include printer::virtual
 	}
 
 node 'clara.semtix', 'hannah.semtix' {
 	include semtix::client
 	include printer::kyocera
+	include printer::virtual
 	}
 
 node gretel.semtix {

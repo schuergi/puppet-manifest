@@ -17,6 +17,7 @@ class printer::judith {
 			'Resolution'	=> '600dpi',
 			}
 		}
+
 	cups_queue { 'Kyocera-Kyocera-FS-4200DN':
 		ensure 	=> 'printer',
 		uri 	=> 'socket://192.168.1.190:9100',
@@ -50,6 +51,7 @@ class printer::kyocera {
 			'Resolution'	=> '600dpi',
 			}
 		}
+
 	cups_queue { 'Kyocera-Kyocera-FS-4200DN':
 		ensure 	=> 'printer',
 		uri 	=> 'socket://192.168.1.190:9100',
