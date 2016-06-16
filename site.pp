@@ -4,9 +4,19 @@
 
 node fai-client {
 
-package { 'pairs':
-	ensure => installed,
-}
+include 'cups::'
+        cups_queue { 'CUPS-PDF':
+                ensure  => 'printer',
+        #       ppd     => '',
+                uri     => 'cups-pdf:/',
+                options => {
+                        'accepting'     => 'true',
+                        'enabled'       => 'true',
+#                        'PageSize'      => 'A4',
+#                        'Duplex'        => 'true',
+#                        'Resolution'    => '600dpi',
+                        }
+		}
 
 }
 
