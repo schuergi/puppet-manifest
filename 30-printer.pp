@@ -1,8 +1,8 @@
 class printer::judith {
 
 
-include 'cups::'
-	class { '::cups'
+# include 'cups::'
+	class { '::cups':
 	  default_queue => 'KONICA_MINOLTA_362_282_222',
 		}
 	
@@ -16,7 +16,7 @@ include 'cups::'
 			'Duplex'	=> 'true',
 			'Resolution'	=> '600dpi',
 			}
-		
+		}
 	cups_queue { 'Kyocera-Kyocera-FS-4200DN':
 		ensure 	=> 'printer',
 		uri 	=> 'socket://192.168.1.190:9100',
@@ -30,12 +30,12 @@ include 'cups::'
 		
 		}
 		
-	}
+	
 }
 
 class printer::kyocera {
-include 'cups::'
-	class { '::cups'
+# include 'cups::'
+	class { '::cups':
 	  default_queue => 'Kyocera-Kyocera-FS-4200DN',
 		}
 	
@@ -49,7 +49,7 @@ include 'cups::'
 			'Duplex'	=> 'true',
 			'Resolution'	=> '600dpi',
 			}
-		
+		}
 	cups_queue { 'Kyocera-Kyocera-FS-4200DN':
 		ensure 	=> 'printer',
 		uri 	=> 'socket://192.168.1.190:9100',
@@ -63,6 +63,6 @@ include 'cups::'
 		
 		}
 		
-	}
+	
 
 }
