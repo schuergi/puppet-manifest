@@ -4,21 +4,28 @@
 
 node fai-client {
 
-include 'cups::'
+#include '::cups'
+class { '::cups':
+	default_queue => 'CUPS-PDF',
+	papersize => 'A4',
+	webinterface => true,
+	}
         cups_queue { 'CUPS-PDF':
                 ensure  => 'printer',
-        #       ppd     => '',
                 uri     => 'cups-pdf:/',
-                options => {
-                        'accepting'     => 'true',
-                        'enabled'       => 'true',
-#                        'PageSize'      => 'A4',
-#                        'Duplex'        => 'true',
-#                        'Resolution'    => '600dpi',
-                        }
+		enabled => 'true',
+		accepting => 'true',
 		}
 
+        cups_queue { 'Boomaga':
+                ensure  => 'printer',
+                uri     => 'boomaga:/',
+		accepting => 'true',
+		enabled => 'true',
 }
+
+}
+
 
 node fai-server {
 	# Configure puppetdb and its underlying database
