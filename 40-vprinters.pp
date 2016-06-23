@@ -11,24 +11,16 @@ class printer::virtual {
 	cups_queue { 'cups-pdf':
 	                ensure  => 'printer',
         	        uri     => 'cups-pdf:/',
-                	options => {
-                        	'accepting'     => 'true',
-                        	'enabled'       => 'true',
-                        	'PageSize'      => 'A4',
-                        	}
+                        accepting     => 'true',
+                        enabled       => 'true',
+
                 }
 
         cups_queue { 'boomaga':
                 ensure  => 'printer',
                 uri     => 'boomaga:/',
-                options => {
-                        'accepting'     => 'true',
-                        'enabled'       => 'true',
-                        'PageSize'      => 'A4',
-                        'Duplex'        => 'true',
-                        'Resolution'    => '600dpi',
-                        }
-
+                accepting     => 'true',
+                enabled       => 'true',
                 }
 
 }

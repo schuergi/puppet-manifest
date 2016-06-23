@@ -2,8 +2,7 @@
 class semtix::client {
 
 	package { 'semtixdb':
-		ensure => installed,
-		version => latest,
+		ensure => 'latest',
 		}
 
 
