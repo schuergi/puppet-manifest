@@ -19,15 +19,15 @@ class printer::judith {
 	
 	cups_queue { 'KONICA_MINOLTA_362_282_222':
 		ensure 	=> 'printer',
-		uri 	=> 'socket://192.168.1.130',
+		uri 	=> 'socket://192.168.1.130/',
 		ppd	=> '/usr/share/ppd/custom/KO362U.ppd',
 		accepting	=> 'true',
 		enabled	=> 'true',
 		options => {
-			'PageSize'	=> 'A4',
-			'KMDuplex'	=> 'True',
-			'Resolution'	=> '600dpi',
-			'PrinterHDD'	=> 'True',
+		#	'PageSize'	=> 'A4',
+		#	'KMDuplex'	=> 'True',
+		#	'Resolution'	=> '600dpi',
+		#	'PrinterHDD'	=> 'False',
 			}
 		}
 
@@ -38,7 +38,7 @@ class printer::judith {
 		make_and_model => 'Kyocera FS-4200DN (KPDL)',
 		accepting => 'true',
 		enabled	  => 'true',
-		
+
 		}
 		
 
@@ -67,13 +67,13 @@ class printer::kyocera {
 		ensure 	=> 'printer',
 		uri 	=> 'socket://192.168.1.130',
 		ppd	=> '/usr/share/ppd/custom/KO362U.ppd',
-		accepting	=> 'true',
+		accepting => 'true',
 		enabled	=> 'true',
 		options => {
-			'PageSize'	=> 'A4',
-			'KMDuplex'	=> 'True',
-			'Resolution'	=> '600dpi',
-			'PrinteerHDD'	=> 'Ture',
+		#	'PageSize'	=> 'A4',
+		#	'KMDuplex'	=> 'True',
+		#	'Resolution'	=> '600dpi',
+		#	'PrinterHDD'	=> 'False',
 			}
 		}
 
@@ -84,7 +84,6 @@ class printer::kyocera {
         	        make_and_model => 'Kyocera FS-4200DN (KPDL)',
         	        accepting     => 'true',
         	        enabled       => 'true',
-        	               
 
                 }
 
