@@ -7,4 +7,7 @@ class semtix::client::software {
 	package { 'cifs-utils':
 		ensure => latest,
 		}
+	package { 'gvfs-backends':
+		ensure => latest,
+		}
 }
