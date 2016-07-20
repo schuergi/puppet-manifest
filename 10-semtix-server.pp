@@ -36,12 +36,4 @@ class semtix::server {
 		 port       => 80,
 		}
 
-	# Configure puppetdb and its underlying database
-	#	class { 'puppetdb': 
-	#		database => 'embedded',
-	#		database_embedded_path => '/var/lib/puppetdb/',
-	#		disable_ssl => 'true',
-	#		ssl_listen_address => '0.0.0.0',
-	#		}
-
 }
