@@ -35,6 +35,7 @@ class semtix::client {
 		source => 'puppet:///files/cupsd.conf',
 		}
 
+
 	include semtix::client::software
 	include semtix::client::mounts
 }

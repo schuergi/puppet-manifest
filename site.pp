@@ -7,7 +7,7 @@ node 'cece.semtix', 'lucy.semtix' {
 	include printer::virtual
 	}
 
-node 'clara.semtix', 'hannah.semtix' {
+node 'clara.semtix', 'ullah' {
 	include semtix::client
 	include printer::kyocera
 	include printer::virtual
