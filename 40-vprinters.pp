@@ -9,7 +9,7 @@ class printer::virtual {
 		 }
 
 	cups_queue { 'cups-pdf':
-	                ensure  => 'printer',
+	#                ensure  => 'printer',
         	        uri     => 'cups-pdf:/',
                         accepting     => 'true',
                         enabled       => 'true',
@@ -17,7 +17,7 @@ class printer::virtual {
                 }
 
         cups_queue { 'boomaga':
-                ensure  => 'printer',
+        #        ensure  => 'printer',
                 uri     => 'boomaga:/',
                 accepting     => 'true',
                 enabled       => 'true',

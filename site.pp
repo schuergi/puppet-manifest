@@ -3,14 +3,14 @@
 # TODO split client class to reflect different rooms
 node 'cece.semtix', 'lucy.semtix' {
 	include semtix::client
-	include printer::judith
-	include printer::virtual
+#	include printer::judith
+#	include printer::virtual
 	}
 
 node 'clara.semtix', 'ullah' {
 	include semtix::client
-	include printer::kyocera
-	include printer::virtual
+#	include printer::kyocera
+#	include printer::virtual
 	}
 
 node gretel.semtix {
@@ -21,7 +21,7 @@ node gretel.semtix {
 node helene.semtix {
 	
         include semtix::client
-        include printer::judith
-        include printer::virtual
+#        include printer::judith
+#       include printer::virtual
         include semtix::firmware
 }
