@@ -15,6 +15,7 @@ class semtix::client::software {
 
 	class { 'unattended_upgrades':
 		enable => 1,
+		enable_on_shutdown => true,
 		age => {
 		max => 2,
 			},
@@ -45,6 +46,10 @@ class semtix::client::software {
 		ensure => latest,
 		}
 	package { 'screen':
+		ensure => latest,
+		}
+
+	package { 'ethtool':
 		ensure => latest,
 		}
 }
