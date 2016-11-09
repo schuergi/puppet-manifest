@@ -1,21 +1,21 @@
 class semtix::client::software {
 
-	apt::key { 'semtix':
+#	apt::key { 'semtix':
 	#	id => '935EBF8409C36C93DE71F2873D8C0990A149AB19',
-		id => '47B320EB4C7C375AA9DAE1A01054B7A24BD6EC30',
-		server => 'pool.sks-keyservers.net',
-		}
+#		id => '47B320EB4C7C375AA9DAE1A01054B7A24BD6EC30',
+#		server => 'pool.sks-keyservers.net',
+#		}
 
-        class { 'apt':
-                update => {
-                frequency => 'daily',
-                        },
-                }
+#        class { 'apt':
+#                update => {
+#                frequency => 'daily',
+#                       },
+#                }
 
 
 	class { 'unattended_upgrades':
 		enable => 1,
-		enable_on_shutdown => true,
+	#	enable_on_shutdown => true,
 		age => {
 		max => 2,
 			},
