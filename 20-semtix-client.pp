@@ -16,6 +16,7 @@ class semtix::client {
 		ensure => 'directory',
 		source => 'puppet:///files/semtixdb/templates',
 		recurse => true,
+		mode => '777',
 		}
 
 	file { '/etc/polkit-1/localauthority/10-vendor.d/org.opensuse.cupspkhelper.pkla':
@@ -35,6 +36,17 @@ class semtix::client {
 		source => 'puppet:///files/cupsd.conf',
 		}
 
+	file { '/etc/login.defs':
+		ensure => 'file',
+		source => 'puppet:///files/login.defs',
+		mode => '644',
+		}
+
+	file { '/usr/share/applications/cups-web.desktop':
+		ensure => 'file',
+		source => 'puppet:///files/cups-web.desktop',
+		mode => '644',
+		}
 
 	include semtix::client::software
 	include semtix::client::mounts

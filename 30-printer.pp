@@ -27,7 +27,7 @@ class printer::judith {
 	
 
 	cups_queue { 'KONICA_MINOLTA_287':
-#                ensure  => 'printer',
+                ensure  => 'printer',
                 uri     => 'ipp://192.168.1.130/ipp',
                 ppd     => '/usr/share/ppd/custom/KO367GX.ppd',
                 accepting    => 'true',
@@ -45,7 +45,7 @@ class printer::judith {
                 }
 
 	cups_queue { 'Kyocera-Kyocera-FS-4200DN':
-	#	ensure 	=> 'printer',
+		ensure 	=> 'printer',
 		uri 	=> 'ipp://192.168.1.199/ipp',
 		ppd => '/usr/share/ppd/custom/Kyocera_FS-4200DN.ppd',
 #		model	=> 'openprinting-ppds:0/ppd/openprinting/Kyocera/en/Kyocera_FS-4200DN.ppd',
@@ -90,7 +90,7 @@ class printer::kyocera {
 	
 
 	cups_queue { 'KONICA_MINOLTA_287':
- #               ensure  => 'printer',
+                ensure  => 'printer',
                 uri     => 'ipp://192.168.1.130/ipp',
                 ppd     => '/usr/share/ppd/custom/KO367GX.ppd',
                 accepting    => 'true',
@@ -108,7 +108,7 @@ class printer::kyocera {
 
 
 	cups_queue { 'Kyocera-Kyocera-FS-4200DN':
-        #	        ensure  => 'printer',
+        	        ensure  => 'printer',
         	        uri     => 'ipp://192.168.1.199/ipp',
         	        ppd     => '/usr/share/ppd/custom/Kyocera_FS-4200DN.ppd',
 	       #	        model   => 'openprinting-ppds:0/ppd/openprinting/Kyocera/en/Kyocera_FS-4200DN.ppd',

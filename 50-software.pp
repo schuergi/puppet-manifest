@@ -52,6 +52,26 @@ class semtix::client::software {
 	package { 'ethtool':
 		ensure => latest,
 		}
+
+	package { 'gconf-editor':
+		ensure => latest,
+		}
+
+	package { 'enigmail':
+		ensure => latest,
+		}
+	package { 'dosbox':
+		ensure => latest,
+		}
+	package { 'alacarte':
+		ensure => latest,
+		}
+	package { 'alsa-utils':
+		ensure => latest,
+		}
+	package { 'lm-sensors':
+		ensure => latest,
+		}
 }
 
 class semtix::firmware {
