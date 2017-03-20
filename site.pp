@@ -21,7 +21,7 @@ node gretel.semtix {
 node helene.semtix {
 	
         include semtix::client
-#        include printer::judith
+#       include printer::judith
 #       include printer::virtual
         include semtix::firmware
 }

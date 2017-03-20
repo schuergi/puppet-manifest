@@ -69,7 +69,16 @@ class semtix::client::software {
 	package { 'alsa-utils':
 		ensure => latest,
 		}
+
 	package { 'lm-sensors':
+		ensure => latest,
+		}
+
+	package { 'cpufrequtils':
+		ensure => latest,
+		}
+
+	package { 'tmux':
 		ensure => latest,
 		}
 }
