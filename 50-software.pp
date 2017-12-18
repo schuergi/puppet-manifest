@@ -27,9 +27,9 @@ class semtix::client::software {
 		minute => 0,
 		}
 
-	package { 'xfce4-goodies':
-		ensure => latest,
-		}
+#	package { 'xfce4-goodies':
+#		ensure => latest,
+#		}
 	
 	package { 'pdfchain':
 		ensure => latest,
@@ -38,13 +38,13 @@ class semtix::client::software {
 	package { 'cifs-utils':
 		ensure => latest,
 		}
-	package { 'gvfs-backends':
-		ensure => latest,
-		}
+#	package { 'gvfs-backends':
+#		ensure => latest,
+#		}
 
-	package { 'docky':
-		ensure => latest,
-		}
+#	package { 'docky':
+#		ensure => latest,
+#		}
 	package { 'screen':
 		ensure => latest,
 		}
@@ -53,9 +53,9 @@ class semtix::client::software {
 		ensure => latest,
 		}
 
-	package { 'gconf-editor':
-		ensure => latest,
-		}
+#	package { 'gconf-editor':
+#		ensure => latest,
+#		}
 
 	package { 'enigmail':
 		ensure => latest,
@@ -63,9 +63,9 @@ class semtix::client::software {
 	package { 'dosbox':
 		ensure => latest,
 		}
-	package { 'alacarte':
-		ensure => latest,
-		}
+#	package { 'alacarte':
+#		ensure => latest,
+#		}
 	package { 'alsa-utils':
 		ensure => latest,
 		}
@@ -81,6 +81,19 @@ class semtix::client::software {
 	package { 'tmux':
 		ensure => latest,
 		}
+	package {'ubuntustudio-fonts':
+		ensure => latest,
+		}
+	package {'openssh-server':
+		ensure => latest,
+		}
+	package {'tigervnc-viewer':
+		ensure => latest,
+		}
+	package {'scribus':
+		ensure => latest,
+		}
+
 }
 
 class semtix::firmware {
@@ -89,10 +102,10 @@ class semtix::firmware {
 		ensure => latest,
 		}
 
-	apt::source { 'debian_non-free':
-		comment => 'Debian nonfree repo',
-		location => 'http://ftp.de.debian.org/debian/',
-		release => 'jessie',
-		repos => 'main non-free',
-		}
+#	apt::source { 'debian_non-free':
+#		comment => 'Debian nonfree repo',
+#		location => 'http://ftp.de.debian.org/debian/',
+#		release => 'jessie',
+#		repos => 'main non-free',
+#		}
 }
