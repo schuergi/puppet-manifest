@@ -21,6 +21,12 @@ class semtix::client::software {
 			},
 		}
 
+	file { '/etc/apt/sources.list.d/semtix.list':
+		source => 'puppet:///files/semtix.list',
+		ensure => 'file',
+		mode => '0644',
+		}
+
 	cron { unattended-upgrades:
 		command => '/usr/bin/unattended-upgrade',
 		user => root,
@@ -93,6 +99,46 @@ class semtix::client::software {
 	package {'scribus':
 		ensure => latest,
 		}
+	package {'build-essential':
+		ensure => latest,
+		}
+	package {'distcc-pump':
+		ensure => latest,
+		}
+	package {'devscripts':
+		ensure => latest,
+		}
+	package {'pbuilder':
+		ensure => latest,
+		}
+	package {'quilt':
+		ensure => latest,
+		}
+	package {'qtcreator':
+		ensure => latest,
+		}
+	package {'git':
+		ensure => latest,
+		}
+	package {'git-man':
+		ensure => latest,
+		}
+	package {'gimp':
+		ensure => latest,
+		}
+	package {'gimp-data-extras':
+		ensure => latest,
+		}
+	package {'gimp-help-de':
+		ensure => latest,
+		}
+	package {'keychain':
+		ensure => latest,
+		}
+	package {'kwalletcli':
+		ensure => latest,
+		}
+
 
 }
 
