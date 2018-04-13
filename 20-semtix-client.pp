@@ -67,5 +67,6 @@ class semtix::client {
 
 	include semtix::client::software
 #	include semtix::client::mounts
+	include semtix::client::firefox
 }
 
