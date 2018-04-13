@@ -12,6 +12,7 @@ node 'helene.semtix', 'ullah.semtix', 'clara.semtix', 'cece.semtix', 'lucy.semti
 #	include printer::judith
 	include printer::ppd
 	include printer::virtual
+	include semtix::distcc
 	}
 
 #node gretel.semtix {
