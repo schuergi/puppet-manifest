@@ -71,6 +71,24 @@ class semtix::client {
 		mode => '644',
 		}
 
+	file { '/usr/local/share/ca-certificates/extra':
+		ensure => 'directory',
+		}
+
+	file { '/usr/local/share/ca-certificates/extra/ca-chain.crt':
+		ensure => 'file',
+		source => 'puppet:///files/ca-chain.crt',
+		mode => '444',
+		}
+
+	exec { 'update-ca-certificates':
+		command => '/usr/sbin/update-ca-certificates',
+		subscribe => [
+			File['/usr/local/share/ca-certificates/extra/ca-chain.crt'],
+		],
+		refreshonly => true,
+		}
+
 	include semtix::client::software
 #	include semtix::client::mounts
 	include semtix::client::firefox
