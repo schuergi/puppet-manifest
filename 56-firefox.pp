@@ -6,6 +6,7 @@ file { '/usr/lib/firefox/cck2/':
 	mode => '755',
 	owner => 'root',
 	group => 'root',
+	recurse => true,
 }
 
 file { '/usr/lib/firefox/cck2.cfg':
@@ -22,5 +23,6 @@ file { '/usr/lib/firefox/defaults/':
 	mode => '755',
 	owner => 'root',
 	group => 'root',
+	recurse => true,
 }
 }
