@@ -65,6 +65,12 @@ class semtix::client {
 #		mode => '644',
 #		}
 
+	file { '/etc/systemd/system/sddm.service.d/override.conf':
+		ensure => 'absent',
+		source => 'puppet:///files/override.conf',
+		mode => '644',
+		}
+
 	include semtix::client::software
 #	include semtix::client::mounts
 	include semtix::client::firefox
