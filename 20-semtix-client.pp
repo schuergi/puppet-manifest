@@ -92,8 +92,21 @@ class semtix::client {
 		refreshonly => true,
 		}
 
+	 file { '/etc/systemd/system/home-users.mount.d':
+		ensure => 'directory',
+		mode => '755',
+		}
+
+	file { '/etc/systemd/system/home-users.mount.d/override.conf':
+		ensure => 'file',
+		mode => '644',
+		source => 'puppet:///files/override.conf',
+		}
+
 	include semtix::client::software
+	include semtix::client::ssh
 #	include semtix::client::mounts
 	include semtix::client::firefox
+	include semtix::client::cloud
 }
 
