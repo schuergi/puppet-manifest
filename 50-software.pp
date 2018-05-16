@@ -21,11 +21,11 @@ class semtix::client::software {
 			},
 		}
 
-	file { '/etc/apt/sources.list.d/semtix.list':
-		source => 'puppet:///files/semtix.list',
-		ensure => 'file',
-		mode => '0644',
-		}
+#	file { '/etc/apt/sources.list.d/semtix.list':
+#		source => 'puppet:///files/semtix.list',
+#		ensure => file,
+#		mode => '0644',
+#		}
 
 	cron { unattended-upgrades:
 		command => '/usr/bin/unattended-upgrade',
@@ -37,9 +37,9 @@ class semtix::client::software {
 #		ensure => latest,
 #		}
 	
-	package { 'pdfchain':
-		ensure => latest,
-		}
+#	package { 'pdfchain':
+#		ensure => latest,
+#		}
 
 	package { 'cifs-utils':
 		ensure => latest,
@@ -139,6 +139,7 @@ class semtix::client::software {
 		ensure => latest,
 		}
 
+include semtix::client::software::cockpit
 
 }
 
