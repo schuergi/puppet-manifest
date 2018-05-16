@@ -1,4 +1,4 @@
-class semtix::client::software {
+class semtix::client::software::cockpit {
 
 	package { 'cockpit':
 		ensure => latest,
