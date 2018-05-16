@@ -5,6 +5,9 @@ class semtix::client {
 #		ensure => 'latest',
 #		}
 
+	package { 'oracle-java8-installer':
+		ensure => 'latest',
+		}
 
 	file { '/etc/semtixdb/':
 		ensure => 'directory',
