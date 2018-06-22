@@ -6,7 +6,7 @@ class semtix::client::ssh {
   
   service {'sshd':
     ensure => running,
-    enabled => true,
+    enable => true,
   }
 
   ssh_authorized_key { 'root@gretel':
