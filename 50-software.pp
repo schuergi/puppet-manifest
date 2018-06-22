@@ -90,9 +90,6 @@ class semtix::client::software {
 	package {'ubuntustudio-fonts':
 		ensure => latest,
 		}
-	package {'openssh-server':
-		ensure => latest,
-		}
 	package {'tigervnc-viewer':
 		ensure => latest,
 		}
