@@ -23,6 +23,6 @@ class semtix::client::cloud {
   }
   
   service { 'media-cloud.automount':
-    enabled => true,
+    enable => true,
   }
 }
