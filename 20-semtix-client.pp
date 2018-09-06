@@ -54,27 +54,6 @@ class semtix::client {
 		group => 'root',
 		}
 
-	file { '/etc/systemd/network/wol.link':
-		ensure => 'absent',
-#		source => 'puppet:///files/wol.link',
-#		mode => '644',
-#		owner => 'root',
-#		group => 'root',
-		}
-	file {'/etc/systemd/system/wol@.service':
-		ensure => 'file',
-		source => 'puppet:///files/wol@.service',
-		mode => '644',
-		owner => 'root',
-		group => 'root',
-		}
-
-	service { 'wol@enp0s31f6':
-		ensure => 'true',
-		enable => 'true',
-		provider => 'systemd',
-		}
-
 
 #	file { '/usr/share/applications/cups-web.desktop':
 #		ensure => 'file',
@@ -122,5 +101,6 @@ class semtix::client {
 #	include semtix::client::mounts
 	include semtix::client::firefox
 	include semtix::client::cloud
+	include semtix::client::wakeonlan
 }
 
