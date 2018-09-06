@@ -15,6 +15,7 @@ class semtix::client {
 		recurse => true,
 		}
 
+
 	file { '/usr/share/semtixdb/templates':
 		ensure => 'directory',
 		source => 'puppet:///files/semtixdb/templates',
@@ -54,11 +55,24 @@ class semtix::client {
 		}
 
 	file { '/etc/systemd/network/wol.link':
+		ensure => 'absent',
+#		source => 'puppet:///files/wol.link',
+#		mode => '644',
+#		owner => 'root',
+#		group => 'root',
+		}
+	file {'/etc/systemd/system/wol@.service':
 		ensure => 'file',
-		source => 'puppet:///files/wol.link',
+		source => 'puppet:///files/wol@.service',
 		mode => '644',
 		owner => 'root',
 		group => 'root',
+		}
+
+	service { 'wol@enp0s31f6':
+		ensure => 'true',
+		enable => 'true',
+		provider => 'systemd',
 		}
 
 
