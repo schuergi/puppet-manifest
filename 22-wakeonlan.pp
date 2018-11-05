@@ -11,7 +11,8 @@ class semtix::client::wakeonlan {
                 }
 
         service { "wol@${ifs[0]}":
-                ensure => 'true',
+                # disabled because it caused troubles during boot
+		# ensure => 'true',
                 enable => 'true',
                 provider => 'systemd',
                 }
