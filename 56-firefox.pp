@@ -1,28 +1,34 @@
 class semtix::client::firefox {
 
-file { '/usr/lib/firefox/cck2/':
-	ensure => 'directory',
-	source => 'puppet:///files/firefox/cck2',
-	mode => '755',
-	owner => 'root',
-	group => 'root',
-	recurse => true,
-}
+# here comes new config for Firefox 62+
 
-file { '/usr/lib/firefox/cck2.cfg':
+file { '/usr/lib/firefox/distribution/distribution.ini':
+	ensure => 'absent',
+	}
+
+file { '/etc/firefox/syspref.js':
 	ensure => 'file',
-	source => 'puppet:///files/firefox/cck2.cfg',
-	owner => 'root',
-	group => 'root',
-}
+	mode => '644',
+	source => 'puppet:///files/firefox/syspref.js',
+	}
 
-file { '/usr/lib/firefox/defaults/':
-	ensure => 'directory',
-	source => 'puppet:///files/firefox/defaults/',
-	replace => 'false',
-	mode => '755',
-	owner => 'root',
-	group => 'root',
-	recurse => true,
-}
+file { '/usr/lib/firefox/defaults/pref/autoconfig.js':
+	ensure => 'file',
+	source => 'puppet:///files/firefox/autoconfig.js',
+	mode => '644',
+	}
+
+file { '/usr/lib/firefox/firefox.cfg':
+	ensure => 'file',
+	source => 'puppet:///files/firefox/firefox.cfg',
+	mode => '644',
+	}
+
+file { '/usr/lib/firefox/distribution/policies.json':
+	ensure => 'file',
+	mode => '644',
+	source => 'puppet:///files/firefox/policies.json',
+	}
+
+
 }
