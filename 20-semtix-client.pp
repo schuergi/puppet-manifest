@@ -104,6 +104,12 @@ class semtix::client {
 		source => 'puppet:///files/override.conf',
 		}
 
+	file { '/etc/modprobe.d/blacklist-uas.conf':
+		ensure => 'file',
+		mode => '644',
+		source => 'puppet:///files/blacklist-uas.conf',
+		}
+
 	include semtix::client::software
 	include semtix::client::ssh
 #	include semtix::client::mounts
