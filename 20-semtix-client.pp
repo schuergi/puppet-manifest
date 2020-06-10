@@ -5,9 +5,17 @@ class semtix::client {
 #		ensure => 'latest',
 #		}
 
-	package { 'oracle-java8-installer':
+#	package { 'oracle-java8-installer':
+#		ensure => 'latest',
+#		}
+
+	package { 'openjdk-8-jre':
 		ensure => 'latest',
 		}
+
+#	alternatives { 'java':
+#		path => '/usr/lib/jvm/java-1.8.0-openjdk-amd64/',
+#		}
 
 	file { '/etc/semtixdb/':
 		ensure => 'directory',
