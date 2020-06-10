@@ -135,6 +135,27 @@ class semtix::client::software {
 	package {'kwalletcli':
 		ensure => latest,
 		}
+	package {'inkscape':
+		ensure => latest,
+		}
+	package {'ink-generator':
+		ensure => latest,
+		}
+	package {'usb-creator-kde':
+		ensure => latest,
+		}
+	package {'zsync':
+		ensure => latest,
+		}
+	package {'atril':
+		ensure => latest,
+		}
+	package {'zoom':
+		ensure => latest,
+		}
+	package {'telegram-desktop':
+		ensure => latest,
+		}
 
 include semtix::client::software::cockpit
 
