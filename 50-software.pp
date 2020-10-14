@@ -27,6 +27,12 @@ class semtix::client::software {
 #		mode => '0644',
 #		}
 
+        file {'/etc/apt/apt.conf.d/02proxy':
+               source => 'puppet:///files/02proxy',
+               ensure => file,
+               mode => '0644',
+               }
+
 	cron { unattended-upgrades:
 		command => '/usr/bin/unattended-upgrade',
 		user => root,
