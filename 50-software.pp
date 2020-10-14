@@ -162,6 +162,15 @@ class semtix::client::software {
 	package {'telegram-desktop':
 		ensure => latest,
 		}
+	package {'k3b':
+		ensure => latest,
+		}
+	package {'kamoso':
+		ensure => latest,
+		}
+	package {'glances':
+		ensure => latest,
+		}
 
 include semtix::client::software::cockpit
 
