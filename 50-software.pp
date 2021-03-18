@@ -70,7 +70,7 @@ class semtix::client::software {
 #		}
 
 	package { 'enigmail':
-		ensure => latest,
+		ensure => absent,
 		}
 	package { 'dosbox':
 		ensure => latest,
