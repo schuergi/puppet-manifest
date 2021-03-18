@@ -89,7 +89,9 @@ class semtix::client::software {
 	package { 'cpufrequtils':
 		ensure => latest,
 		}
-
+	package {'unoconv':
+		ensure=> latest,
+	}
 	package { 'tmux':
 		ensure => latest,
 		}
