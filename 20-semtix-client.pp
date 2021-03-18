@@ -23,6 +23,15 @@ class semtix::client {
 		recurse => true,
 		}
 
+	file { '/var/log/semtixdb':
+		ensure => 'directory',
+		mode => '777',
+		}
+
+#	file {'/etc/logrotate.d/semtixdb':
+#		ensure => 'file',
+#		source => 'puppet:///files/semtixdb-logrotate',
+#		}
 
 	file { '/usr/share/semtixdb/templates':
 		ensure => 'directory',
