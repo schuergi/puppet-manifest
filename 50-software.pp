@@ -29,7 +29,7 @@ class semtix::client::software {
 
         file {'/etc/apt/apt.conf.d/02proxy':
                source => 'puppet:///files/02proxy',
-               ensure => file,
+               ensure => absent,
                mode => '0644',
                }
 
