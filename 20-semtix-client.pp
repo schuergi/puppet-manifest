@@ -119,7 +119,7 @@ class semtix::client {
 		source => 'puppet:///files/blacklist-uas.conf',
 		}
 
-	file { '/usr/lib/thunderbird/isp/refrat.hu-berlin.de.xml',
+	file { '/usr/lib/thunderbird/isp/refrat.hu-berlin.de.xml':
 		ensure => 'file',
 		mode => '644',
 		source => 'puppet:///files/refrat.hu-berlin.de.xml',
