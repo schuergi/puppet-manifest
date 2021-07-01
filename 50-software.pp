@@ -39,6 +39,10 @@ class semtix::client::software {
 		minute => 0,
 		}
 
+	class { 'apt': }
+
+	apt::ppa { 'ppa:atareao/telegram': }
+
 #	package { 'xfce4-goodies':
 #		ensure => latest,
 #		}
@@ -161,9 +165,6 @@ class semtix::client::software {
 	package {'zoom':
 		ensure => latest,
 		}
-	package {'telegram-desktop':
-		ensure => latest,
-		}
 	package {'k3b':
 		ensure => latest,
 		}
@@ -171,6 +172,9 @@ class semtix::client::software {
 		ensure => latest,
 		}
 	package {'glances':
+		ensure => latest,
+		}
+	package {'telegram':
 		ensure => latest,
 		}
 
