@@ -177,7 +177,10 @@ class semtix::client::software {
 	package {'telegram':
 		ensure => latest,
 		}
-
+	file {'/usr/lib/libreoffice/share/extensions/LanguageTool':
+		recurse => remote,
+		source => 'puppet:///files/LanguageTool',
+		}
 include semtix::client::software::cockpit
 
 }
