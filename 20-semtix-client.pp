@@ -125,6 +125,21 @@ class semtix::client {
 		source => 'puppet:///files/refrat.hu-berlin.de.xml',
 		}
 
+	file { '/etc/systemd/system/puppet.service.d':
+		ensure => 'directory',
+		mode => '755',
+		}
+	file { '/etc/systemd/system/puppet.service.d/override.conf':
+		ensure => 'file',
+		mode => '644',
+		source => 'puppet:///files/puppet.service.d/override.conf',
+		}
+	service {'puppet':
+		ensure => 'running',
+		enable => 'true',
+		provider => 'systemd',
+		}
+
 	include semtix::client::software
 	include semtix::client::ssh
 #	include semtix::client::mounts
