@@ -181,6 +181,10 @@ class semtix::client::software {
 		recurse => remote,
 		source => 'puppet:///files/LanguageTool',
 		}
+	package {'python3-venv':
+		ensure => latest,
+		}
+
 include semtix::client::software::cockpit
 
 }
