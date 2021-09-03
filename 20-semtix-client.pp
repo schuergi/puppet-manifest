@@ -113,6 +113,12 @@ class semtix::client {
 		source => 'puppet:///files/override.conf',
 		}
 
+	file {'/etc/modprobe.d/nfsd.conf':
+		ensure => 'file',
+		mode => '644',
+		source => 'puppet:///files/nfsd.conf',
+		}
+
 	file { '/etc/modprobe.d/blacklist-uas.conf':
 		ensure => 'file',
 		mode => '644',
