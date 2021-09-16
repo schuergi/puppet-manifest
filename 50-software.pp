@@ -64,6 +64,21 @@ class semtix::client::software {
 #	package {'puppet-agent':
 #		ensure => latest,
 #	}
+
+
+	apt::source { 'adoptopenjdk':
+		location => 'https://adoptopenjdk.jfrog.io/adoptopenjdk/deb',
+		repos => 'main',
+		key => {
+			'id' => '8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03',
+			'server' => 'pgp.mit.edu',
+			}
+		}
+
+	package {'adoptopenjdk-8-hotspot-jre':
+		ensure => latest,
+	}
+
 #	package { 'xfce4-goodies':
 #		ensure => latest,
 #		}
