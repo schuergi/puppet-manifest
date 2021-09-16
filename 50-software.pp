@@ -43,6 +43,27 @@ class semtix::client::software {
 
 	apt::ppa { 'ppa:atareao/telegram': }
 
+
+#	apt::key { 'puppetlabs':
+#		id => '6F6B15509CF8E59E6E469F327F438280EF8D349F',
+#		server => 'pgp.mit.edu',
+#	}
+
+#	apt::source { 'puppetlabs':
+#		location => 'http://apt.puppetlabs.com',
+#		repos => 'puppet6',
+#		key => {
+#			'id' => '4528B6CD9E61EF26',
+#			'server' => 'pgp.mit.edu',
+#		}
+#	}
+#	package {'puppet':
+#		ensure => absent,
+#	}
+
+#	package {'puppet-agent':
+#		ensure => latest,
+#	}
 #	package { 'xfce4-goodies':
 #		ensure => latest,
 #		}

@@ -145,6 +145,14 @@ class semtix::client {
 		mode => '644',
 		source => 'puppet:///files/puppet.service.d/override.conf',
 		}
+
+#	class {'::puppet_agent':
+#		package_version => '6.24.0',
+#		service_names   => ['puppet'],
+#		collection      => 'puppet6',
+#	}
+
+
 	service {'puppet':
 		ensure => 'running',
 		enable => 'true',
