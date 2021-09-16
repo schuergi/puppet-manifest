@@ -118,6 +118,11 @@ class semtix::client {
 		mode => '644',
 		source => 'puppet:///files/nfsd.conf',
 		}
+	file { '/etc/default/nfs-common':
+		ensure => 'file',
+		mode => '644',
+		source => 'puppet:///files/nfs-common',
+		}
 
 	file { '/etc/modprobe.d/blacklist-uas.conf':
 		ensure => 'file',
